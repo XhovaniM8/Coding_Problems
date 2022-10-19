@@ -1,0 +1,3 @@
+﻿D:\Visual Studio Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (BCS370_Assignment3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+  BCS370_Assignment4.vcxproj -> D:\Desktop\Farmingdale State College\00 - Years\04 - Senior\Fall 2021\BCS 370 - Data Structures\Learning Modules\Homework\Assignment 4\BCS370_Assignment4\Debug\BCS370_Assignment4.exe
