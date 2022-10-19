@@ -38,7 +38,7 @@ public:
 //****************************************************
 // Function: isEmpty
 //
-// Purpose: To show the heading for screen output.
+// Purpose: Checks if Hash Table is Empty
 //
 //****************************************************
 bool HashTable::isEmpty() const
@@ -70,7 +70,7 @@ int HashTable::hashFunction(int key)
 //****************************************************
 // Function: insertItem
 //
-// Purpose:
+// Purpose: Inserts Pair into Hash Table
 //
 //****************************************************
 void HashTable::insertItem(int key, string value)
@@ -103,7 +103,7 @@ void HashTable::insertItem(int key, string value)
 //****************************************************
 // Function: removeItem
 //
-// Purpose:
+// Purpose: Removes a pair from Hash Table
 //
 //****************************************************
 void HashTable::removeItem(int key)
@@ -130,25 +130,38 @@ void HashTable::removeItem(int key)
         cout << "[WARNING] Key not found. Pair not removed."
              << "\n";
     }
-    
+
     return;
 }
 
 //****************************************************
 // Function: searchTable
 //
-// Purpose: To show the heading for screen output.
+// Purpose: Looks up Hash Table Item
 //
 //****************************************************
 string HashTable::searchTable(int key)
 {
-    return 0;
+    int hashValue = hashFunction(key);
+	auto& cell = table[hashValue];
+	auto bItr = begin(cell);
+	bool keyExists = false;
+
+	for (; bItr != end(cell); bItr++) {
+		if (bItr->first == key) {
+			keyExists = true;
+			return bItr->second;
+		}
+	}
+
+	if (!keyExists)
+		return "Result Not Found";
 }
 
 //****************************************************
 // Function: printTable
 //
-// Purpose: To show the heading for screen output.
+// Purpose: Prints out Hash Table to console
 //
 //****************************************************
 void HashTable::printTable()
